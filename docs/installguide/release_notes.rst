@@ -9,6 +9,22 @@ to read the release notes.
   ``0.15.x`` to ``0.17.x`` is not guaranteed to work.
 
 
+Unreleased
+----------
+
+Bug fixes
+^^^^^^^^^
+
+* Content database discovery (``available_content_databases()``) returned
+  nothing because the database directory was passed to ``glob.iglob()`` instead
+  of a ``content_*.sqlite`` pattern.
+* Importing ``kalite.contentload.settings`` no longer fails when
+  ``KALITE_CONTENT_ROOT`` is read-only, so read-only/container content mounts
+  are usable.
+* ``kalite start`` no longer aborts when ``ifconfig`` is unavailable (minimal
+  container images, distributions that only ship ``ip``); it falls back to
+  printing the loopback address.
+
 0.17.5
 ------
 

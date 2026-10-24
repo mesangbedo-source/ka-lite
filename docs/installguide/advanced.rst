@@ -165,3 +165,34 @@ Example of setting up kalite for the www-data user: ::
     kalite manage setup
     exit
 
+
+
+.. _readonly-content-root:
+
+Read-only content directories and containerised deployments
+__________________________________________________________
+
+``KALITE_CONTENT_ROOT`` (the directory holding ``<youtube_id>.mp4`` videos,
+thumbnails and subtitles) does not have to be writable. Since 0.17.5 it may be
+a read-only bind-mount, a read-only network share, or a directory owned by a
+different user, for example when the same video store is shared by several
+KA Lite instances or mounted into a container::
+
+    docker run --read-only \
+        -v /srv/kalite/data:/data \
+        -v /srv/kalite/content:/content:ro \
+        -e KALITE_HOME=/data \
+        -e KALITE_CONTENT_ROOT=/content \
+        ka-lite:0.17.5
+
+Two things are needed for such a setup:
+
+* ``KALITE_CONTENT_ROOT/assessment`` and ``.../assessment/khan`` must exist if
+  the content root cannot be written to. KA Lite logs a warning instead of
+  failing when it cannot create them.
+* ``kalite start`` no longer aborts when it cannot enumerate network
+  interfaces. Interface enumeration uses ``ifconfig``, which many minimal
+  container images and current distributions no longer install; in that case
+  KA Lite prints only the loopback address and starts normally. Install
+  ``net-tools`` (or a distribution providing ``ifconfig``) if you want the
+  LAN addresses to be shown.
