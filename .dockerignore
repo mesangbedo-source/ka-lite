@@ -1,0 +1,16 @@
+.git
+.github
+.pytest_cache
+__pycache__
+*.pyc
+docs
+screenshots
+test-results
+deploy/data
+deploy/content
+deploy/database
+deploy/backups
+deploy/logs
+deploy/kalite.env
+deploy/vendor/*
+!deploy/vendor/ka_lite_static-0.17.5-py2-none-any.whl

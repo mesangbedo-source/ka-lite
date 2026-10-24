@@ -104,3 +104,17 @@ writeup/
 ghostdriver.log
 *.swp
 file_map.json
+
+# Maintenance deployment runtime state (never commit)
+deploy/data/
+deploy/content/
+deploy/database/
+deploy/backups/
+deploy/logs/
+deploy/vendor/
+deploy/kalite.env
+deploy/*.part
+
+# Python caches
+__pycache__/
+*.pyc

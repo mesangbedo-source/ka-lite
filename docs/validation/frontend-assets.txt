@@ -1,0 +1,19 @@
+PASS /_generated/dynamic.css                                    text/css                 63 bytes
+PASS /_generated/dynamic.js                                     text/javascript          666 bytes
+PASS /static/fonts/style.css                                    text/css;charset=utf-8   1502 bytes
+PASS /static/css/distributed/khan-site.css                      text/css;charset=utf-8   139638 bytes
+PASS /static/images/horizontal-logo-small.png                   image/png                3961 bytes
+PASS /static/images/logo_10_enlarged_2.png                      image/png                116290 bytes
+PASS /static/images/distributed/favicon.ico                     image/x-icon             946 bytes
+PASS /static/images/distributed/FLE.png                         image/png                2216 bytes
+PASS /static/images/distributed/CC-BY-NC-SA.png                 image/png                697 bytes
+PASS /static/django_js_reverse/js/reverse.js                    application/javascript   102401 bytes
+PASS /static/js/i18n/en.js                                      application/javascript   5476 bytes
+PASS /static/js/distributed/bundles/bundle_common.js            application/javascript   870573 bytes
+PASS /static/js/distributed/bundles/bundle_base.js              application/javascript   877773 bytes
+PASS /static/js/distributed/bundles/bundle_homepage.js          application/javascript   48586 bytes
+PASS /static/js/inline/bundles/bundle_bootstrap.js              application/javascript   88867 bytes
+PASS /static/js/inline/bundles/bundle_inline_help.js            application/javascript   41384 bytes
+PASS /static/fonts/fontawesome-webfont.woff                     application/font-woff    43572 bytes
+
+All 17 frontend asset checks passed

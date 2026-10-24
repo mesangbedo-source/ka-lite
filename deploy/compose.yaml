@@ -1,0 +1,73 @@
+# KA Lite 0.17.5 working maintenance fork
+#
+#   cd deploy
+#   ./scripts/bootstrap.sh
+#   edit kalite.env (admin password)
+#   docker compose build
+#   docker compose up -d
+#
+# The service is bound to 127.0.0.1 only. Do not expose it to an untrusted
+# network without an access-controlled reverse proxy.
+
+name: ka-lite-maintenance
+
+services:
+  ka-lite:
+    image: ka-lite:0.17.5-working
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    pull_policy: never
+    container_name: ka-lite-maintenance
+    restart: unless-stopped
+
+    user: "10001:10001"
+    read_only: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    ipc: private
+    init: false
+
+    env_file:
+      - ./kalite.env
+    environment:
+      KALITE_HOME: /data
+      KALITE_CONTENT_ROOT: /content
+      KALITE_LISTEN_PORT: "8008"
+
+    ports:
+      - "127.0.0.1:8008:8008"
+
+    volumes:
+      - ./data:/data:rw
+      - ./content:/content:rw
+      - ./database:/seed:ro
+
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,nodev,size=64m
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - import urllib2,sys; sys.exit(0 if urllib2.urlopen('http://127.0.0.1:8008/', timeout=8).getcode() == 200 else 1)
+      interval: 30s
+      timeout: 10s
+      start_period: 180s
+      retries: 5
+
+    networks:
+      - kalite_internal
+
+networks:
+  kalite_internal:
+    driver: bridge

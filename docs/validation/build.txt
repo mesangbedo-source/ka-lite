@@ -1,0 +1,50 @@
+KA Lite maintenance fork build validation
+Date (UTC): 2026-10-24
+Host: Linux Mint 22.3, kernel 7.3.0-ryzen5950x, x86_64
+
+Command:
+  cd deploy
+  docker compose build
+
+Result: success
+Image: ka-lite:0.17.5-working
+Image ID: sha256:3164fda64dd3ba1a7f7ee5a49bfb8702b90644016f7cdce1f2dd970aa6e9b9dc
+
+Static wheel:
+  ka_lite_static-0.17.5-py2-none-any.whl
+  sha256 0d6ffe5518a542107fd08ffe0669f77d3f622f4e7fd465e9a8b60e0f8aae6b04
+  verified during build
+
+Isolated runtime test:
+  container: ka-lite-maintenance-test
+  bind: 127.0.0.1:8012
+  health: healthy
+  data: copy of historical data with old STATIC_ROOT removed
+  logs:
+    [ka-lite-init] Content database present: /data/database/content_khan_en.sqlite
+    [ka-lite-init] Existing application database found: /data/database/data.sqlite
+    [ka-lite-init] Frontend bundles missing from /data/httpsrv/static; running collectstatic
+    2310 static files copied.
+    [ka-lite-init] Starting: kalite start --foreground --skip-job-scheduler --port=8008
+
+Frontend asset check:
+  /tmp/ka-maintenance/deploy/scripts/check-frontend-assets.py --base http://127.0.0.1:8012
+  17/17 passed
+
+Browser checks:
+  Chromium 156.0.8078.47, 1280x900
+  homepage, login modal, management, admin, learner, video: 0 local static errors,
+  0 console errors, 0 page errors
+  video: O-6q-siuMik.mp4, readyState 4, 1280x720, HTTP 206 video/mp4
+  exercise: engine rendered; 2 assessment image 404s due to missing content images
+
+Recovery tests:
+  python3 -m unittest discover -s tests/video-recovery -v
+  20 tests passed
+
+Index builder:
+  python3 tools/video-index/build_video_index.py --database <copied content DB> --outdir <tmp>
+  integrity ok; 11,235 video rows; 8,033 unique IDs; 2,379 duplicate IDs;
+  3,202 extra rows; 0 invalid IDs
+
+The running installation on 127.0.0.1:8008 was not modified during this test.

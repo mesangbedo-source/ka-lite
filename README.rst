@@ -1,6 +1,14 @@
 KA Lite
 =======
 
+.. note::
+
+   This is a community maintenance fork of KA Lite 0.17.5 by Dr. Moses
+   Olabhele Esangbedo. It is **not** maintained, sponsored, or endorsed by
+   Learning Equality, and it is not an official KA Lite release. See
+   `README.maintenance.md <README.maintenance.md>`__ for the repair,
+   installation, validation, limitations, and AI-assistance disclosure.
+
 by `Learning Equality <https://learningequality.org/>`__
 
 |Build Status| |Coverage Status| |Docs|

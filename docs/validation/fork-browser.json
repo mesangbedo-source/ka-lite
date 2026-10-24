@@ -1,0 +1,134 @@
+{
+  "base": "http://127.0.0.1:8012",
+  "viewport": {
+    "width": 1280,
+    "height": 900
+  },
+  "pages": [
+    {
+      "label": "home",
+      "dom": {
+        "title": "Welcome | KA Lite",
+        "url": "http://127.0.0.1:8012/",
+        "font": "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
+        "navBg": "rgb(196, 215, 227)",
+        "logo": [
+          138,
+          33
+        ],
+        "nav": [
+          "Learn",
+          "Login",
+          "Sign Up"
+        ],
+        "jquery": true,
+        "session": true,
+        "sheets": 9,
+        "inlineBytes": 317865
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [
+        {
+          "url": "http://127.0.0.1:8012/content/O-6q-siuMik.mp4",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "httpErrors": []
+    },
+    {
+      "label": "manage",
+      "dom": {
+        "title": "Sharing Network Management Console | KA Lite",
+        "url": "http://127.0.0.1:8012/management/zone/None/",
+        "font": "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
+        "navBg": "rgb(196, 215, 227)",
+        "logo": [
+          138,
+          33
+        ],
+        "nav": [
+          "Teach",
+          "Manage",
+          "Learn",
+          "Docs\n      Open user manual in new window",
+          "admin",
+          "About",
+          "Logout"
+        ],
+        "jquery": true,
+        "session": true,
+        "sheets": 10,
+        "inlineBytes": 316408
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [
+        {
+          "url": "http://127.0.0.1:8012/content/O-6q-siuMik.mp4",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "httpErrors": []
+    },
+    {
+      "label": "admin",
+      "dom": {
+        "title": "Site administration | Django site admin | KA Lite",
+        "url": "http://127.0.0.1:8012/admin/",
+        "font": "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
+        "navBg": "rgb(196, 215, 227)",
+        "logo": [
+          138,
+          33
+        ],
+        "nav": [
+          "Teach",
+          "Manage",
+          "Learn",
+          "Docs\n      Open user manual in new window",
+          "admin",
+          "About",
+          "Logout"
+        ],
+        "jquery": true,
+        "session": true,
+        "sheets": 10,
+        "inlineBytes": 316416
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [
+        {
+          "url": "http://127.0.0.1:8012/content/O-6q-siuMik.mp4",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "httpErrors": []
+    },
+    {
+      "label": "video",
+      "dom": {
+        "title": "Learn: Introduction to Grammar | KA Lite",
+        "url": "http://127.0.0.1:8012/learn/khan/humanities/grammar/partsofspeech/grammar-nouns/introduction-to-grammar/"
+      },
+      "video": [
+        {
+          "src": "http://127.0.0.1:8012/content/O-6q-siuMik.mp4",
+          "ready": 4,
+          "w": 1280,
+          "h": 720
+        }
+      ],
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [
+        {
+          "url": "http://127.0.0.1:8012/content/O-6q-siuMik.mp4",
+          "error": "net::ERR_ABORTED"
+        }
+      ],
+      "httpErrors": []
+    }
+  ]
+}

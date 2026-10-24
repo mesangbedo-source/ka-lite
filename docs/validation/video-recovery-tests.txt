@@ -1,0 +1,25 @@
+test_build_download_command (test_kalite_video_recovery.CommandTests.test_build_download_command) ... ok
+test_dry_run_writes_plan_without_downloading (test_kalite_video_recovery.CommandTests.test_dry_run_writes_plan_without_downloading) ... ok
+test_existing_file_is_skipped_without_ytdlp (test_kalite_video_recovery.CommandTests.test_existing_file_is_skipped_without_ytdlp) ... ok
+test_import_srt (test_kalite_video_recovery.CommandTests.test_import_srt) ... ok
+test_missing_ytdlp_fails_gracefully (test_kalite_video_recovery.CommandTests.test_missing_ytdlp_fails_gracefully) ... ok
+test_quality_profiles (test_kalite_video_recovery.CommandTests.test_quality_profiles) ... ok
+test_verify_manifest_detects_checksum_mismatch (test_kalite_video_recovery.CommandTests.test_verify_manifest_detects_checksum_mismatch) ... ok
+test_load_index_deduplicates_and_skips_invalid_rows (test_kalite_video_recovery.IndexTests.test_load_index_deduplicates_and_skips_invalid_rows) ... ok
+test_roundtrip_and_summary (test_kalite_video_recovery.ManifestTests.test_roundtrip_and_summary) ... ok
+test_ffprobe_stream_quality (test_kalite_video_recovery.MediaTests.test_ffprobe_stream_quality) ... ok
+test_ffprobe_warns_when_quality_exceeds_request (test_kalite_video_recovery.MediaTests.test_ffprobe_warns_when_quality_exceeds_request) ... ok
+test_missing_file (test_kalite_video_recovery.MediaTests.test_missing_file) ... ok
+test_nonempty_file_without_ffprobe (test_kalite_video_recovery.MediaTests.test_nonempty_file_without_ffprobe) ... ok
+test_zero_byte_file (test_kalite_video_recovery.MediaTests.test_zero_byte_file) ... ok
+test_srt_to_vtt (test_kalite_video_recovery.SubtitleTests.test_srt_to_vtt) ... ok
+test_srt_to_vtt_invalid (test_kalite_video_recovery.SubtitleTests.test_srt_to_vtt_invalid) ... ok
+test_invalid_video_ids (test_kalite_video_recovery.ValidationTests.test_invalid_video_ids) ... ok
+test_valid_video_id (test_kalite_video_recovery.ValidationTests.test_valid_video_id) ... ok
+test_video_path (test_kalite_video_recovery.ValidationTests.test_video_path) ... ok
+test_youtube_url (test_kalite_video_recovery.ValidationTests.test_youtube_url) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.164s
+
+OK
