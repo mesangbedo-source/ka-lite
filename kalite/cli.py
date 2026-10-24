@@ -359,7 +359,20 @@ def get_pid():
 
 def print_server_address(port):
     # Print output to user about where to find the server
-    addresses = get_ip_addresses(include_loopback=False)
+    try:
+        addresses = get_ip_addresses(include_loopback=False)
+    except Exception as exc:
+        # get_ip_addresses() shells out to ifconfig (via ifcfg) and raises
+        # OSError when neither ifconfig nor any other supported tool is
+        # installed, which is the case in most minimal container images.
+        # Not being able to enumerate interfaces must not prevent the server
+        # from starting.
+        addresses = []
+        sys.stderr.write(
+            "Unable to determine this machine's network addresses ({exc}).\n"
+            "Continuing; the server will still be reachable on "
+            "http://127.0.0.1:{port}/\n".format(exc=exc, port=port)
+        )
     print("To access KA Lite from another connected computer, try the following address(es):")
     for addr in addresses:
         print("\thttp://%s:%s/\n" % (addr, port))
