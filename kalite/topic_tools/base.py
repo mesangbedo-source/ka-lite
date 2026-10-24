@@ -43,7 +43,11 @@ def available_content_databases():
     @return: iterator over (channel, language) values
     """
     pattern = re.compile("content_(?P<channel>[^_]+)_(?P<language>[^_]+).sqlite")
-    for filename in glob.iglob(django_settings.DEFAULT_DATABASE_DIR):
+    # glob() needs a pattern, not a bare directory name: passing the directory
+    # itself matches only the directory entry itself, so this generator used to
+    # yield nothing at all.
+    for filename in glob.iglob(
+            os.path.join(django_settings.DEFAULT_DATABASE_DIR, "content_*.sqlite")):
         match = pattern.search(filename)
         if match:
             yield match.group(1, 2)
