@@ -1,0 +1,458 @@
+Generating a new secret key file /tmp/kh/secretkey.txt...
+
+Creating test database for alias 'default' (':memory:')...
+Syncing...
+Creating tables ...
+Creating table auth_permission
+Creating table auth_group_permissions
+Creating table auth_group
+Creating table auth_user_groups
+Creating table auth_user_user_permissions
+Creating table auth_user
+Creating table django_session
+Creating table django_admin_log
+Creating table django_content_type
+Creating table south_migrationhistory
+Installing custom SQL ...
+Installing indexes ...
+
+Synced:
+ > django.contrib.auth
+ > django.contrib.sessions
+ > django.contrib.messages
+ > django.contrib.admin
+ > django.contrib.staticfiles
+ > django.contrib.contenttypes
+ > django_js_reverse
+ > south
+ > kalite.coachreports
+ > kalite.distributed
+ > kalite.topic_tools
+ > kalite.contentload
+ > kalite.dynamic_assets
+ > kalite.inline
+ > kalite.control_panel
+
+Not synced (use migrations):
+ - tastypie
+ - securesync
+ - fle_utils.config
+ - fle_utils.chronograph
+ - kalite.main
+ - kalite.updates
+ - kalite.facility
+ - kalite.student_testing
+ - kalite.i18n
+(use ./manage.py migrate to migrate these)
+Installed 0 object(s) from 0 fixture(s)
+test_creates_missing_directory_tree (kalite.contentload.tests.settings_tests.EnsureDirTestCase) ... ok
+test_is_idempotent_for_existing_directories (kalite.contentload.tests.settings_tests.EnsureDirTestCase) ... ok
+test_module_import_survives_read_only_content_root (kalite.contentload.tests.settings_tests.EnsureDirTestCase) ... [WARNING] [2026-10-24 23:09:23,031] kalite: Unable to create content directory /tmp/tmpUH2OiA/content-ro/assessment: [Errno 13] Permission denied: '/tmp/tmpUH2OiA/content-ro/assessment'. Continuing with a read-only content root.
+[WARNING] [2026-10-24 23:09:23,031] kalite: Unable to create content directory /tmp/tmpUH2OiA/content-ro/assessment/khan: [Errno 13] Permission denied: '/tmp/tmpUH2OiA/content-ro/assessment'. Continuing with a read-only content root.
+ok
+test_read_only_parent_does_not_raise (kalite.contentload.tests.settings_tests.EnsureDirTestCase) ... [WARNING] [2026-10-24 23:09:23,031] kalite: Unable to create content directory /tmp/tmpiiY2Io/readonly/assessment: [Errno 13] Permission denied: '/tmp/tmpiiY2Io/readonly/assessment'. Continuing with a read-only content root.
+ok
+test_does_not_descend_into_subdirectories (kalite.topic_tools.tests.content_db_discovery_tests.AvailableContentDatabasesTestCase) ... ok
+test_ignores_files_that_are_not_content_databases (kalite.topic_tools.tests.content_db_discovery_tests.AvailableContentDatabasesTestCase) ... ok
+test_yields_channel_and_language_for_each_content_database (kalite.topic_tools.tests.content_db_discovery_tests.AvailableContentDatabasesTestCase) ... ok
+test_yields_nothing_for_an_empty_directory (kalite.topic_tools.tests.content_db_discovery_tests.AvailableContentDatabasesTestCase) ... ok
+test_manage (kalite.distributed.tests.cli_tests.CLITestCase) ... Traceback (most recent call last):
+  File "/src/kalite/packages/bundled/django/core/management/base.py", line 224, in run_from_argv
+    self.execute(*args, **options.__dict__)
+  File "/src/kalite/packages/bundled/fle_utils/django_utils/command.py", line 141, in execute
+    super(LocaleAwareCommand, self).execute(*args, **kwargs)
+  File "/src/kalite/packages/bundled/django/core/management/base.py", line 263, in execute
+    output = self.handle(*args, **options)
+  File "/src/kalite/updates/management/commands/videoscan.py", line 30, in handle
+    self.setup(kwargs)
+  File "/src/kalite/updates/management/utils.py", line 65, in setup
+    self.progress_log = UpdateProgressLog.get_active_log(process_name=self.process_name)
+  File "/src/kalite/updates/models.py", line 171, in get_active_log
+    if logs.count() > 0:
+  File "/src/kalite/packages/bundled/django/db/models/query.py", line 372, in count
+    return self.query.get_count(using=self.db)
+  File "/src/kalite/packages/bundled/django/db/models/sql/query.py", line 423, in get_count
+    number = obj.get_aggregation(using=using)[None]
+  File "/src/kalite/packages/bundled/django/db/models/sql/query.py", line 389, in get_aggregation
+    result = query.get_compiler(using).execute_sql(SINGLE)
+  File "/src/kalite/packages/bundled/django/db/models/sql/compiler.py", line 840, in execute_sql
+    cursor.execute(sql, params)
+  File "/src/kalite/packages/bundled/django/db/backends/sqlite3/base.py", line 366, in execute
+    six.reraise(utils.DatabaseError, utils.DatabaseError(*tuple(e.args)), sys.exc_info()[2])
+  File "/src/kalite/packages/bundled/django/db/backends/sqlite3/base.py", line 362, in execute
+    return Database.Cursor.execute(self, query, params)
+DatabaseError: no such table: updates_updateprogresslog
+ERROR
+test_start (kalite.distributed.tests.cli_tests.CLITestCase) ... Running 'kalite start' in foreground...
+Setting up KA Lite; this may take a few minutes; please wait!
+
+                                     
+   _   __  ___    _     _ _          
+  | | / / / _ \  | |   (_) |         
+  | |/ / / /_\ \ | |    _| |_ ___    
+  |    \ |  _  | | |   | | __/ _ \   
+  | |\  \| | | | | |___| | ||  __/   
+  \_| \_/\_| |_/ \_____/_|\__\___|   
+                                     
+https://learningequality.org/ka-lite/
+                                     
+         version 0.17.5
+                                     
+Baking a fresh database from scratch or upgrading existing database.
+Syncing...
+Creating tables ...
+Installing custom SQL ...
+Installing indexes ...
+Installed 0 object(s) from 0 fixture(s)
+
+Synced:
+ > django.contrib.auth
+ > django.contrib.sessions
+ > django.contrib.messages
+ > django.contrib.admin
+ > django.contrib.staticfiles
+ > django.contrib.contenttypes
+ > django_js_reverse
+ > south
+ > kalite.coachreports
+ > kalite.distributed
+ > kalite.topic_tools
+ > kalite.contentload
+ > kalite.dynamic_assets
+ > kalite.inline
+ > kalite.control_panel
+
+Not synced (use migrations):
+ - tastypie
+ - securesync
+ - fle_utils.config
+ - fle_utils.chronograph
+ - kalite.main
+ - kalite.updates
+ - kalite.facility
+ - kalite.student_testing
+ - kalite.i18n
+(use ./manage.py migrate to migrate these)
+Running migrations for tastypie:
+ - Migrating forwards to 0002_add_apikey_index.
+ > tastypie:0001_initial
+ > tastypie:0002_add_apikey_index
+ - Loading initial data for tastypie.
+Installed 0 object(s) from 0 fixture(s)
+Running migrations for securesync:
+ - Migrating forwards to 0024_auto__del_unique_facilityuser_username_facility.
+ > securesync:0001_initial
+ > securesync:0002_auto__add_field_facilityuser_is_teacher
+ > securesync:0003_auto__add_facilitygroup__add_field_facilityuser_group
+ > securesync:0004_auto__add_field_facility_zoom
+ > securesync:0005_auto__chg_field_device_public_key
+ > securesync:0006_auto__del_registereddevicepublickey
+ > securesync:0007_auto__add_registereddevicepublickey
+ > securesync:0008_auto__add_field_syncsession_client_version__add_field_syncsession_clie
+ > securesync:0009_auto__chg_field_syncsession_client_os__chg_field_syncsession_client_ve
+ > securesync:0010_auto__add_syncedlog
+ > securesync:0011_auto__add_field_facilityuser_zone_fallback__add_field_devicezone_zone_
+ > securesync:0012_auto__add_field_facilityuser_deleted__add_field_devicezone_deleted__ad
+ > securesync:0013_auto__add_field_facility_contact_name__add_field_facility_contact_phon
+ > securesync:0014_auto__chg_field_facilityuser_last_name__chg_field_syncedlog_category
+ > securesync:0015_auto__add_importpurgatory
+ > securesync:0016_auto__add_field_importpurgatory_model_count
+ > securesync:0017_auto__add_field_devicezone_revoked__add_field_devicezone_max_counter
+ > securesync:0018_auto__add_field_device_version__add_field_syncsession_errors
+ > securesync:0019_auto__add_cachedpassword
+ > securesync:0019_auto__add_field_registereddevicepublickey_created_timestamp__add_field
+ > securesync:0019_auto__add_zoneinvitation
+ > securesync:0020_auto__add_field_devicemetadata_is_demo_device
+ > securesync:0021_auto__chg_field_facilityuser_signature__chg_field_devicezone_signature
+ > securesync:0021_merge_models
+ > securesync:0022_auto__chg_field_facilityuser_counter__chg_field_devicezone_counter__ch
+ > securesync:0023_auto__add_field_facilityuser_default_language
+ > securesync:0024_auto__add_field_facilitygroup_description
+ > securesync:0024_auto__del_unique_facilityuser_username_facility
+ - Loading initial data for securesync.
+Installed 0 object(s) from 0 fixture(s)
+Running migrations for config:
+ - Migrating forwards to 0002_auto__add_settings.
+ > config:0001_initial
+ > config:0002_auto__add_settings
+ - Loading initial data for config.
+Installed 0 object(s) from 0 fixture(s)
+Running migrations for chronograph:
+ - Migrating forwards to 0001_initial.
+ > chronograph:0001_initial
+ - Loading initial data for chronograph.
+Installed 0 object(s) from 0 fixture(s)
+Running migrations for main:
+ - Migrating forwards to 0041_auto__add_contentrating__add_unique_contentrating_content_source_conte.
+ > main:0001_initial
+ > main:0002_auto__add_videofile
+ > main:0003_auto__add_field_exerciselog_points
+ > main:0004_auto__add_field_videofile_priority
+ > main:0005_auto__add_field_exerciselog_struggling__add_field_exerciselog_attempts
+ > main:0006_auto__add_settings
+ > main:0007_auto__del_settings
+ > main:0008_auto__add_field_exerciselog_completion_timestamp__add_field_exerciselo
+ > main:0009_auto__add_field_videolog_completion_timestamp__add_field_videolog_comp
+ > main:0010_auto__add_field_videofile_flagged_for_subtitle_download__add_field_vid
+ > main:0011_auto__add_field_videofile_cancel_download
+ > main:0012_auto__add_field_videolog_zone_fallback__add_field_exerciselog_zone_fal
+ > main:0013_auto__add_field_videolog_deleted__add_field_exerciselog_deleted
+ > main:0014_auto__chg_field_videolog_youtube_id__chg_field_videofile_youtube_id__c
+ > main:0015_auto__add_languagepack
+ > main:0016_auto__add_userlog__add_userlogsummary
+ > main:0017_auto__add_field_userlogsummary_total_logins__chg_field_userlogsummary_
+ > main:0018_auto__del_field_userlogsummary_total_logins__add_field_userlogsummary_
+ > main:0019_auto__add_field_videolog_language__add_field_userlog_language__add_fie
+ > main:0019_auto__chg_field_videolog_counter__chg_field_userlogsummary_counter__ch
+ > main:0019_auto__chg_field_videolog_signature__chg_field_userlogsummary_signature
+ > main:0020_auto__add_field_videolog_language__chg_field_videolog_counter__add_fie
+ > main:0021_auto__chg_field_languagepack_code
+ > main:0022_auto__add_field_languagepack_subtitle_count
+ > main:0023_auto__del_field_videofile_subtitle_download_in_progress__del_field_vid
+ > main:0024_auto__del_field_languagepack_crowdin_version__add_field_languagepack_l
+ > main:0025_auto__add_field_userlogsummary_last_activity_datetime
+ > main:0026_auto__del_videofile__del_languagepack
+ > main:0027_auto__add_field_videolog_video_id
+ > main:0028_set_video_id
+ > main:0029_set_video_id_for_realz
+ - Migration 'main:0029_set_video_id_for_realz' is marked for no-dry-run.
+ > main:0030_auto__add_attemptlog
+ > main:0031_auto__del_field_attemptlog_exercise_version__del_field_attemptlog_poin
+ > main:0032_auto__del_field_attemptlog_random_seed__add_field_attemptlog_seed
+ > main:0033_auto__add_contentlog
+ > main:0033_auto__add_index_attemptlog_user_exercise_id_context_type
+ > main:0034_auto__add_field_contentlog_start_timestamp__add_field_contentlog_progr
+ > main:0035_auto__chg_field_contentlog_progress
+ > main:0036_auto__del_field_attemptlog_response_count__add_field_attemptlog_assess
+ > main:0038_auto__add_field_videolog_latest_activity_timestamp__add_field_contentl
+ > main:0039_log_timestamps
+ - Migration 'main:0039_log_timestamps' is marked for no-dry-run.
+ > main:0040_auto__chg_field_videolog_video_id__chg_field_attemptlog_exercise_id__c
+ > main:0041_auto__add_contentrating__add_unique_contentrating_content_source_conte
+ - Loading initial data for main.
+Installed 0 object(s) from 0 fixture(s)
+Running migrations for updates:
+ - Migrating forwards to 0007_auto__add_field_videofile_language.
+ > updates:0001_initial
+ > updates:0002_auto__add_field_updateprogresslog_cancel_requested
+ > updates:0003_auto__chg_field_updateprogresslog_total_stages
+ > updates:0004_auto__add_field_updateprogresslog_current_stage
+ > updates:0005_auto__add_videofile
+ > updates:0006_auto__add_field_updateprogresslog_stage_status
+ > updates:0007_auto__add_field_videofile_language
+ - Loading initial data for updates.
+Installed 0 object(s) from 0 fixture(s)
+Running migrations for facility:
+ - Migrating forwards to 0001_initial.
+ > facility:0001_initial
+ - Loading initial data for facility.
+Installed 0 object(s) from 0 fixture(s)
+Running migrations for student_testing:
+ - Migrating forwards to 0005_auto__add_field_testlog_total_number.
+ > student_testing:0001_initial
+ > student_testing:0002_auto__del_field_testlog_test_sequence__add_field_testlog_started
+ > student_testing:0003_auto__del_testlog
+ > student_testing:0004_auto__add_testlog
+ > student_testing:0005_auto__add_field_testlog_total_number
+ - Loading initial data for student_testing.
+Installed 0 object(s) from 0 fixture(s)
+Running migrations for i18n:
+ - Migrating forwards to 0003_auto__del_languagepack.
+ > i18n:0001_initial
+ > i18n:0002_add_english_languagepack
+ - Migration 'i18n:0002_add_english_languagepack' is marked for no-dry-run.
+ > i18n:0003_auto__del_languagepack
+ - Loading initial data for i18n.
+Installed 0 object(s) from 0 fixture(s)
+Not running in interactive mode; skipping content pack download.
+Generating 2048-bit RSA encryption key (may take a few minutes; please wait)...
+Done!
+Device 'c3105f9dbd70' has been successfully initialized.
+Copying static media...
+Annotating availability of all content, checking for content in this directory: /tmp/content
+[INFO] [2026-10-24 23:09:27,015] kalite: Annotating content for language: en, channel: khan
+
+This may take several minutes depending on system resources...
+[ERROR] [2026-10-24 23:09:27,015] kalite: Content DB error: Perhaps content database file found? Exception: no such table: item
+
+CONGRATULATIONS! You've finished setting up the KA Lite server software.
+You can now start KA Lite with the following command:
+
+    kalite start
+
+
+Unable to determine this machine's network addresses ([Errno 2] No such file or directory).
+Continuing; the server will still be reachable on http://127.0.0.1:8009/
+To access KA Lite from another connected computer, try the following address(es):
+To access KA Lite from this machine, try the following address:
+	http://127.0.0.1:8009/
+
+[INFO] [2026-10-24 23:09:27,029] cherrypy.error: [24/Oct/2026:23:09:27] ENGINE Listening for SIGHUP.
+[24/Oct/2026:23:09:27] ENGINE Listening for SIGHUP.
+[INFO] [2026-10-24 23:09:27,029] cherrypy.error: [24/Oct/2026:23:09:27] ENGINE Listening for SIGTERM.
+[24/Oct/2026:23:09:27] ENGINE Listening for SIGTERM.
+[INFO] [2026-10-24 23:09:27,029] cherrypy.error: [24/Oct/2026:23:09:27] ENGINE Listening for SIGUSR1.
+[24/Oct/2026:23:09:27] ENGINE Listening for SIGUSR1.
+[INFO] [2026-10-24 23:09:27,029] cherrypy.error: [24/Oct/2026:23:09:27] ENGINE Bus STARTING
+[24/Oct/2026:23:09:27] ENGINE Bus STARTING
+[INFO] [2026-10-24 23:09:27,030] cherrypy.error: [24/Oct/2026:23:09:27]  Loading and serving the Django application
+[24/Oct/2026:23:09:27]  Loading and serving the Django application
+[INFO] [2026-10-24 23:09:27,030] cherrypy.error: [24/Oct/2026:23:09:27] ENGINE Started monitor thread '_TimeoutMonitor'.
+[24/Oct/2026:23:09:27] ENGINE Started monitor thread '_TimeoutMonitor'.
+[INFO] [2026-10-24 23:09:27,133] cherrypy.error: [24/Oct/2026:23:09:27] ENGINE Serving on http://0.0.0.0:8009
+[24/Oct/2026:23:09:27] ENGINE Serving on http://0.0.0.0:8009
+[INFO] [2026-10-24 23:09:27,133] cherrypy.error: [24/Oct/2026:23:09:27] ENGINE Bus STARTED
+[24/Oct/2026:23:09:27] ENGINE Bus STARTED
+[INFO] [2026-10-24 23:09:38,047] cherrypy.error: [24/Oct/2026:23:09:38] ENGINE Bus STOPPING
+[24/Oct/2026:23:09:38] ENGINE Bus STOPPING
+[INFO] [2026-10-24 23:09:38,049] cherrypy.error: [24/Oct/2026:23:09:38] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8009)) shut down
+[24/Oct/2026:23:09:38] ENGINE HTTP Server cherrypy._cpwsgi_server.CPWSGIServer(('0.0.0.0', 8009)) shut down
+[INFO] [2026-10-24 23:09:38,049] cherrypy.error: [24/Oct/2026:23:09:38] ENGINE Stopped thread '_TimeoutMonitor'.
+[24/Oct/2026:23:09:38] ENGINE Stopped thread '_TimeoutMonitor'.
+[INFO] [2026-10-24 23:09:38,050] cherrypy.error: [24/Oct/2026:23:09:38] ENGINE Bus STOPPED
+[24/Oct/2026:23:09:38] ENGINE Bus STOPPED
+[INFO] [2026-10-24 23:09:38,050] cherrypy.error: [24/Oct/2026:23:09:38] ENGINE Bus EXITING
+[24/Oct/2026:23:09:38] ENGINE Bus EXITING
+[INFO] [2026-10-24 23:09:38,050] cherrypy.error: [24/Oct/2026:23:09:38] ENGINE Bus EXITED
+[24/Oct/2026:23:09:38] ENGINE Bus EXITED
+[INFO] [2026-10-24 23:09:38,147] cherrypy.error: [24/Oct/2026:23:09:38] ENGINE Waiting for child threads to terminate...
+FINISHED serving HTTP
+[24/Oct/2026:23:09:38] ENGINE Waiting for child threads to terminate...
+ok
+test_thread_manage (kalite.distributed.tests.cli_tests.CLITestCase) ... ok
+test_prints_lan_addresses_when_available (kalite.distributed.tests.cli_tests.PrintServerAddressTestCase) ... ok
+test_prints_loopback_address_when_interfaces_cannot_be_enumerated (kalite.distributed.tests.cli_tests.PrintServerAddressTestCase) ... ok
+
+======================================================================
+ERROR: test_manage (kalite.distributed.tests.cli_tests.CLITestCase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/src/kalite/distributed/tests/cli_tests.py", line 23, in test_manage
+    cli.manage("videoscan")
+  File "/src/kalite/cli.py", line 423, in manage
+    utility.execute()
+  File "/src/kalite/packages/bundled/django/core/management/__init__.py", line 392, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "/src/kalite/packages/bundled/django/core/management/base.py", line 238, in run_from_argv
+    sys.exit(1)
+SystemExit: 1
+
+----------------------------------------------------------------------
+Ran 13 tests in 15.120s
+
+FAILED (errors=1)
+Destroying test database for alias 'default' (':memory:')...
+Usage: runner.py subcommand [options] [args]
+
+Options:
+  -v VERBOSITY, --verbosity=VERBOSITY
+                        Verbosity level; 0=minimal output, 1=normal output,
+                        2=verbose output, 3=very verbose output
+  --settings=SETTINGS   The Python path to a settings module, e.g.
+                        "myproject.settings.main". If this isn't provided, the
+                        DJANGO_SETTINGS_MODULE environment variable will be
+                        used.
+  --pythonpath=PYTHONPATH
+                        A directory to add to the Python path, e.g.
+                        "/home/djangoprojects/myproject".
+  --traceback           Print traceback on exception
+  --auto-pdb            Break into PDB on an uncaught exception
+  --version             show program's version number and exit
+  -h, --help            show this help message and exit
+
+Type 'kalite manage help <subcommand>' for help on a specific subcommand.
+
+Available subcommands:
+
+[auth]
+    changepassword
+    createsuperuser
+
+[chronograph]
+    cron
+    cron_clean
+    cronserver
+    cronserver_blocking
+
+[coachreports]
+    generaterealdata
+    icantbelieveitsnotrealdata
+
+[distributed]
+    clearuserdata
+    contentpackchecker
+    createtunnel
+    initialize_kalite
+    retrievecontentpack
+    run_sandboxed_command
+    runserver
+    screenshots
+    setup
+    test
+
+[django]
+    cleanup
+    compilemessages
+    createcachetable
+    dbshell
+    diffsettings
+    dumpdata
+    flush
+    inspectdb
+    loaddata
+    runfcgi
+    shell
+    sql
+    sqlall
+    sqlclear
+    sqlcustom
+    sqlflush
+    sqlindexes
+    sqlinitialdata
+    sqlsequencereset
+    startapp
+    startproject
+    validate
+
+[django_js_reverse]
+    collectstatic_js_reverse
+
+[i18n]
+    makemessages
+    setup_in_context_translations
+
+[securesync]
+    generate_zone
+    generatekeys
+    initdevice
+    register
+    retrypurgatory
+    syncmodels
+
+[sessions]
+    clearsessions
+
+[south]
+    convert_to_south
+    datamigration
+    graphmigrations
+    migrate
+    migrationcheck
+    schemamigration
+    startmigration
+    syncdb
+    testserver
+
+[staticfiles]
+    collectstatic
+    findstatic
+
+[tastypie]
+    backfill_api_keys
+
+[topic_tools]
+    annotate_content_items
+
+[updates]
+    videodownload
+    videoscan

@@ -90,6 +90,24 @@ invalid ids   : 0
 This verifies the 8,033 unique-ID figure against the actual database. It does
 not verify that every video is still available or legally downloadable.
 
+## Existing upstream compatibility tests
+
+The three local compatibility test modules were run from the maintenance branch
+with the existing `ka-lite:0.17.5-test-min` harness:
+
+```text
+kalite.contentload.tests.settings_tests
+kalite.topic_tools.tests.content_db_discovery_tests
+kalite.distributed.tests.cli_tests
+```
+
+Result: **12/13 passed**. The single failure is `cli_tests.test_manage`
+(`videoscan`), which fails because the ad-hoc in-memory test database does not
+have the South-migrated `updates_updateprogresslog` table. This is the known
+harness limitation documented in the original installation report, not a
+frontend or maintenance-branch regression. Full log:
+`upstream-tests.txt`.
+
 ## Recovery utility tests
 
 `python3 -m unittest discover -s tests/video-recovery -v` ran **20 tests**,
